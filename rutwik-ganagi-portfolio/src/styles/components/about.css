@@ -1,0 +1,39 @@
+.about {
+    background-color: white;
+  }
+  
+  .about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .about__text p {
+    margin-bottom: 1rem;
+  }
+  
+  .about__education {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  .about__education h3 {
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+  }
+  
+  .education__item {
+    margin-bottom: 1.5rem;
+  }
+  
+  .education__item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .about__grid {
+      grid-template-columns: 1fr;
+    }
+  }

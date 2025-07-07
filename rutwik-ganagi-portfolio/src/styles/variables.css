@@ -1,0 +1,5 @@
+:root {
+    --header-height: 70px;
+    --navbar-height: 60px;
+    --hero-height: calc(100vh - var(--header-height) - var(--navbar-height));
+  }
