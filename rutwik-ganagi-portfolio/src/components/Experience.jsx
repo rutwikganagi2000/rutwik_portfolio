@@ -25,9 +25,18 @@ const Experience = () => {
             {experienceData.map((exp, index) => (
               <div key={index} className="timeline__item">
                 <div className="timeline__header">
-                  <h3 className="timeline__title">{exp.title}</h3>
-                  <span className="timeline__company">{exp.company}</span>
-                  <span className="timeline__date">{exp.date}</span>
+                  <div className="company-logo-container">
+                    <img 
+                      src={exp.logo} 
+                      alt={`${exp.company} logo`}
+                      className="company-logo"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="timeline__title">{exp.title}</h3>
+                    <span className="timeline__company">{exp.company}</span>
+                    <span className="timeline__date">{exp.date}</span>
+                  </div>
                 </div>
                 <ul className="timeline__details">
                   {exp.responsibilities.map((resp, respIndex) => (
