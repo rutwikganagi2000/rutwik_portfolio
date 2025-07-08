@@ -1,64 +1,171 @@
 .projects {
-    background-color: #f9f9f9;
-  }
-  
+  background: linear-gradient(120deg, #f9f9f9 60%, #e3e8ff 100%);
+  padding-bottom: 3rem;
+}
+
+.projects__content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section__title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #22223b;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+}
+
+.project__card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.10);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
+  border: 1px solid rgba(200,200,255,0.12);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+.project__card::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  border-radius: 50%;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.project__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.1rem;
+  z-index: 1;
+}
+
+.project__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #22223b;
+  margin: 0;
+}
+
+.project__links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project__github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #22223b;
+  font-weight: 500;
+  font-size: 1rem;
+  background: #f0f0f0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.05);
+}
+
+.project__github-link:hover {
+  background: #22223b;
+  color: #fff;
+}
+
+.github-icon {
+  font-size: 1.1rem;
+  transition: transform 0.2s;
+}
+
+.project__github-link:hover .github-icon {
+  transform: rotate(-12deg) scale(1.15);
+}
+
+.project__description {
+  color: #4a4e69;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  z-index: 1;
+}
+
+.project__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+.tech-badge {
+  background: linear-gradient(90deg, #e0e7ff 60%, #f9f9f9 100%);
+  padding: 0.35rem 1.1rem;
+  border-radius: 16px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #3c3c3c;
+  box-shadow: 0 2px 8px rgba(31, 38, 135, 0.07);
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s;
+  border: 1px solid rgba(200,200,255,0.10);
+}
+
+.tech-badge:hover {
+  background: linear-gradient(90deg, #b7eaff 40%, #e3e8ff 100%);
+  color: #22223b;
+}
+
+/* Optional: Custom colors for some common tech badges */
+.tech-python { color: #3776ab; }
+.tech-fastapi { color: #009688; }
+.tech-postgresql { color: #336791; }
+.tech-aws { color: #ff9900; }
+.tech-terraform { color: #623ce4; }
+.tech-cicd { color: #e34c26; }
+.tech-react { color: #61dafb; }
+.tech-typescript { color: #3178c6; }
+.tech-nodejs { color: #43853d; }
+.tech-expressjs { color: #000; }
+.tech-llama31 { color: #dbb6ff; }
+.tech-nlp { color: #ff9800; }
+.tech-tensorflow { color: #ff6f00; }
+.tech-keras { color: #d00000; }
+.tech-opencv { color: #5c3ee8; }
+.tech-cnn { color: #ffb300; }
+.tech-sqlserver { color: #cc2927; }
+.tech-powerbi { color: #f2c811; }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
   .projects__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
-  
   .project__card {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
-  
-  .project__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
+  .section__title {
+    font-size: 1.5rem;
   }
-  
-  .project__title {
-    font-size: 1.2rem;
-    color: var(--dark-color);
-  }
-  
-  .project__links a {
-    font-size: 0.9rem;
-    color: var(--primary-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-  
-  .project__links a:hover {
-    text-decoration: underline;
-  }
-  
-  .project__description {
-    color: #666;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-  }
-  
-  .project__tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-  }
-  
-  .project__tech li {
-    background-color: #f0f0f0;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    color: #555;
-  }
+}

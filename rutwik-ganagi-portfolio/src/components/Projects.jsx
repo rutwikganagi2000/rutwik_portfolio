@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { FaGithub } from 'react-icons/fa';
 import projectsData from '../data/projects';
 import '../styles/components/projects.css';
 
@@ -26,14 +27,16 @@ const Projects = () => {
               <motion.div 
                 key={index}
                 className="project__card"
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -10, scale: 1.025, boxShadow: "0 8px 32px rgba(31, 38, 135, 0.2)" }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <div className="project__header">
                   <h3 className="project__title">{project.title}</h3>
                   <div className="project__links">
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <i className="fab fa-github"></i> Code
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="project__github-link">
+                        <FaGithub className="github-icon" />
+                        <span>Code</span>
                       </a>
                     )}
                   </div>
@@ -41,7 +44,9 @@ const Projects = () => {
                 <p className="project__description">{project.description}</p>
                 <ul className="project__tech">
                   {project.technologies.map((tech, techIndex) => (
-                    <li key={techIndex}>{tech}</li>
+                    <li key={techIndex} className={`tech-badge tech-${tech.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`}>
+                      {tech}
+                    </li>
                   ))}
                 </ul>
               </motion.div>
