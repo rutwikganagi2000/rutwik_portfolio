@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import northeasternLogo from '../assets/images/neu.png';
+import pesLogo from '../assets/images/pes.png';
 import '../styles/components/about.css';
 
 const About = () => {
@@ -40,12 +42,30 @@ const About = () => {
             <div className="about__education">
               <h3>Education</h3>
               <div className="education__item">
-                <h4>Northeastern University</h4>
-                <p>Master of Science in Software Engineering Systems</p>
+                <div className="education__header">
+                  <img 
+                    src={northeasternLogo} 
+                    alt="Northeastern University Logo" 
+                    className="education__logo"
+                  />
+                  <div>
+                    <h4>Northeastern University</h4>
+                    <p>Master of Science in Software Engineering Systems</p>
+                  </div>
+                </div>
               </div>
               <div className="education__item">
-                <h4>PES University</h4>
-                <p>Bachelor of Technology in Electronics and Communication Engineering</p>
+                <div className="education__header">
+                  <img 
+                    src={pesLogo} 
+                    alt="PES University Logo" 
+                    className="education__logo"
+                  />
+                  <div>
+                    <h4>PES University</h4>
+                    <p>Bachelor of Technology in Electronics and Communication Engineering</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

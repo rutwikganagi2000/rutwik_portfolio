@@ -1,12 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import profileImage from '../assets/images/profile.jpg';
 import '../styles/components/hero.css';
 
 const Hero = () => {
   return (
     <section id="hero" className="hero">
       <div className="container hero__container">
+        <div className="hero__image-container">
+          <motion.img 
+            src={profileImage} 
+            alt="Rutwik Ganagi"
+            className="hero__image"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          />
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
