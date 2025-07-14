@@ -6,7 +6,7 @@ const experienceData = [
     company: 'Société Générale',
     logo: societeGeneraleLogo,
     title: 'Full-Stack Developer',
-    date: '2022 - Present',
+    date: '2022 - 2024',
     responsibilities: [
       'Developed 7+ Adobe Experience Manager adaptive forms and implemented 20+ full-stack features using Java, HTML, CSS, and JavaScript enhancing scalability, performance, and client satisfaction',
       'Integrated SonarQube quality gates into Jenkins pipelines, enforcing code quality standards that reduced technical debt by 75% and prevented 50+ critical issues from reaching production',
@@ -18,7 +18,7 @@ const experienceData = [
     company: 'Bosch',
     logo: boschLogo,
     title: 'Associate Software Engineer | Internship',
-    date: '2021',
+    date: '2022',
     responsibilities: [
       'Developed 10+ Python test scripts to validate ECU behavior during Firmware Over-the-Air (FOTA) updates, increasing testing efficiency by 30%'
     ]
