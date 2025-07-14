@@ -1,5 +1,5 @@
 :root {
-  --hero-height: 75vh;
+  --hero-height: 50vh;
   --primary-color: #ffb400;
   --hero-bg: linear-gradient(135deg, #181c2f 0%, #10131a 100%);
   --text-light: #f5f5f7;
@@ -76,6 +76,30 @@
   color: var(--primary-color);
   font-weight: 600;
   letter-spacing: 0.5px;
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.typing-text {
+  display: inline-block;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--primary-color);
+  animation: blink 1s infinite;
+  font-weight: 400;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 .hero__description {
@@ -168,6 +192,9 @@
   .hero__social {
     justify-content: center;
   }
+  .hero__subtitle {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -180,6 +207,7 @@
   }
   .hero__subtitle {
     font-size: 1.1rem;
+    min-height: 1.8rem;
   }
   .hero__buttons {
     flex-direction: column;
@@ -193,7 +221,11 @@
 
 @media (max-width: 480px) {
   .hero__title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+  }
+  .hero__subtitle {
+    font-size: 1rem;
+    min-height: 1.5rem;
   }
   .hero__image {
     width: 110px;
